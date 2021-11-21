@@ -1,0 +1,9 @@
+---
+-hosts: wp
+gather_facts: yes
+become: yes
+tasks:
+-name: ping
+ action: ping
+-name: show user
+ shell: whoami
