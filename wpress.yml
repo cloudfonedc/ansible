@@ -11,9 +11,9 @@
     yum:
       name: httpd
       state: latest  
-    notify: start httpd
+    
   - name: Start httpd
     service:
       name: httpd
       state: started
-      ebable: true
+      enable: true
