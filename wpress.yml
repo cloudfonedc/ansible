@@ -1,9 +1,13 @@
 ---
--hosts: wp
-gather_facts: yes
-become: yes
-tasks:
--name: ping
- action: ping
--name: show user
- shell: whoami
+- hosts: wp
+  gather_facts: yes
+  become: yes
+  tasks:
+  - name: ping
+    action: ping
+  - name: show user
+    shell: whoami
+  - name: Install httpd
+    yum:
+      name: httpd
+      state: latest  
