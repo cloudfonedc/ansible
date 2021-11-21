@@ -13,7 +13,7 @@
       state: latest  
     
   - name: Start httpd
-    systemd:
+    service:
       name: httpd
       state: started
-      enable: true
+      
