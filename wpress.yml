@@ -13,8 +13,8 @@
       state: latest  
     notify: start httpd
   handlers:
-  - name: start httpd
+  - name: start nginx
     systemd:
-      name: httpd
+      name: nginx
       state: started
-      enable: true  
+      enabled: true
