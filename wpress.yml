@@ -12,9 +12,8 @@
       name: httpd
       state: latest  
     notify: start httpd
-  handlers:
-  - name: start nginx
-    systemd:
-      name: nginx
+  - name: Start httpd
+    service:
+      name: httpd
       state: started
-      enabled: true
+      ebable: true
