@@ -9,4 +9,4 @@
     - name: Add Google Chrome key
       shell: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     - name: install google
-             sudo dpkg -i google-chrome-stable_current_amd64.deb
+      apt: sudo dpkg -i google-chrome-stable_current_amd64.deb
