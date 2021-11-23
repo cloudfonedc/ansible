@@ -1,5 +1,5 @@
 ---
-- hosts: installgoogle
+- hosts: google
   sudo: True
   vars:
     - apt_file: /etc/apt/sources.list.d/google-chrome.list
