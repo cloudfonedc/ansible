@@ -17,8 +17,4 @@
         state=started 
         enabled=yes
 
-    - name: Adjust firewall to allow access to the nginx service.
-      ufw: 
-        name="Nginx HTTP" 
-        rule=allow 
-        state=enabled
+    
