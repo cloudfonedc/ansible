@@ -1,2 +1,10 @@
 ---
 # tasks file for ansible-role-nginx
+- include: install.yml
+  tags:
+    - install
+
+- include: config
+  tags:
+    - config
+    
