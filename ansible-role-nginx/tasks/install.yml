@@ -1,7 +1,6 @@
 ---
-
 - name: install nginx
   apt:
     name: nginx
     state: present
-    otify: start nginx 
+  notify: start nginx
