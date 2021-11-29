@@ -3,8 +3,7 @@
 - hosts: "{{hostname}}"
   gather_facts: yes
   become: yes
-  
-  tasks:
+    tasks:
   - name: ping
     action: ping
     tags: "check-ping"
