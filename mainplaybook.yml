@@ -3,10 +3,7 @@
 - hosts: "{{hostname}}"
   gather_facts: yes
   become: yes
-  pre_tasks: 
-  - name: 'install python'
-    raw: sudo apt-get update && sudo apt-get -y install python3
-    tag: ['always']
+  
   tasks:
   - name: ping
     action: ping
