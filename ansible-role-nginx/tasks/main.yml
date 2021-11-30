@@ -6,5 +6,5 @@
 
 - include: config
   tags:
-    - config
+    - config.yml
      
