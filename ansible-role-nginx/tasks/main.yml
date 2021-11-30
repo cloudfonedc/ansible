@@ -1,5 +1,5 @@
 ---
-
+- name: Install packages nginx
 - include: install.yml
   tags:
     - install
@@ -8,3 +8,11 @@
   tags:
     - config.yml
      
+- name: Create virtual host
+  include: vhost.yml vhost={{ item }}
+  with_items:
+    - "{{ vhost01 }}"
+    - "{{ vhost02 }}"
+
+- name: Deploy source code for virtual hosts
+  include_tasks: deploy.yml
