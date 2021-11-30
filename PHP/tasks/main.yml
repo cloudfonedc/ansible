@@ -1,18 +1,4 @@
 ---
-- name: Add repository
-  become: true
-  apt_repository: repo={{ php_ppa }}
-
-
-- name: Update apt
-  become: yes
-  apt: update_cache=yes
-
-- name: Install PHP Packages
-  become: yes
-  apt: pkg={{ item }} state=latest
-  with_items: "{{ php_packages }}"
-  when: php_packages is defined
-  notify:
-    - restart php7-fpm
-
+- name: "Install"
+  import_tasks: setup.yml
+  tags: setup
