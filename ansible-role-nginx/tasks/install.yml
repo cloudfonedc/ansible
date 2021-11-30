@@ -1,6 +1,6 @@
 ---
 - name: install packages nginx
-  apt:
+    package:
     name: nginx
     state: present
   notify: start nginx
