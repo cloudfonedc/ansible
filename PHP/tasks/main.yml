@@ -1,5 +1,5 @@
 ---
-- name: Add repository for Ubuntu
+- name: Add repository
   become: true
   apt_repository: repo={{ php_ppa }}
 
