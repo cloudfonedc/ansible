@@ -1,0 +1,24 @@
+---
+- name: Add repo PHP
+  become: yes
+  apt_repository: repo={{php_ppa}}
+
+
+
+  - name: update apt 
+    become: yes
+    apt: update_cache=yes
+
+
+- name: Install packages php
+  become: yes
+  apt: pkg={{item}}
+  state: latest
+  with_items: "{{php_packages}}"
+  when: php_packages is defined
+  notify:
+    - restart php7-fpm
+
+- include: config
+  tags:
+    - config
