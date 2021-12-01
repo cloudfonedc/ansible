@@ -11,7 +11,7 @@
     action: ping
     tags: "check-ping"
   roles:
-      - ansible-role-nginx
-      - php 
-  vars:
-    ansible_python_interpreter: "/usr/bin/python3" 
+    - role: ansible-role-nginx
+    - role: PHP
+      vars:
+        ansible_python_interpreter: "/usr/bin/python3"
