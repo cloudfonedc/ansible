@@ -1,6 +1,6 @@
 ---
-- name: install packages nginx
-    package:
+# tasks file for Nginx
+- name: Install Nginx package
+  package:
     name: nginx
     state: present
-  notify: start nginx
