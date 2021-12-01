@@ -1,6 +1,8 @@
 ---
-- name: restart php7-fpm
-  service: name=php7.1-fpm
-  enable: yes
-  state: restarted
-  become: yes
+# handlers file for php
+
+- name: Restart php-fpm
+  service:
+    name: php{{ php_version }}-fpm
+    state: restarted
+    enabled: yes
