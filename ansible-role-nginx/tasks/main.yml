@@ -1,11 +1,9 @@
 ---
 
-- include: install.yml
-  tags:
-    - install
-
-- include: config
-  tags:
+- name: Install and configure Nginx
+  include_tasks: "{{ item }}"
+  with_items:
+    - install.yml
     - config.yml
      
 - name: Create virtual host
