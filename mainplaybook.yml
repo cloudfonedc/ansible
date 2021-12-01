@@ -13,6 +13,6 @@
   roles:
     - role: 
         - ansible-role-nginx
-        - php 
+        - php  
       vars:
         ansible_python_interpreter: "/usr/bin/python3" 
