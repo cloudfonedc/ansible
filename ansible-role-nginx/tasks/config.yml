@@ -20,3 +20,4 @@
   notify:
     - validate nginx
     - start nginx
+    
