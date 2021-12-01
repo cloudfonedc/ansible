@@ -11,6 +11,6 @@
     action: ping
     tags: "check-ping"
   roles:
-    - ansible-role-nginx
-    - php 
+      - ansible-role-nginx
+      - php 
   
