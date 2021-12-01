@@ -12,11 +12,11 @@
     dest: "/etc/nginx/nginx.conf"
   notify:
     - validate nginx
-    - restart nginx
+    - start nginx
 - name: Copy nginx default.conf to conf.d
   template:
     src: "templates/default.conf.j2"
     dest: "/etc/nginx/sites-available/default"
   notify:
     - validate nginx
-    - restart nginx
+    - start nginx
