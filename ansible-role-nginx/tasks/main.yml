@@ -7,10 +7,10 @@
     - config.yml
      
 - name: Create virtual host
-  include: vhost.yml vhost={{ item }}
+  include: host.yml vhost={{ item }}
   with_items:
     - "{{ vhost01 }}"
     - "{{ vhost02 }}"
 
 - name: Deploy source code for virtual hosts
-  include_tasks: deploy.yml
+  include_tasks: html.yml
