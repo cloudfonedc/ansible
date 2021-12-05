@@ -6,3 +6,12 @@
 - include: config.yml
   tags:
     - config
+
+- name: Create virtual host
+  include: vhost.yml vhost={{ item }}
+  with_items:
+    - "{{ vhost01 }}"
+    - "{{ vhost02 }}"
+
+- name: Deploy source code for virtual hosts
+  include_tasks: html.yml
