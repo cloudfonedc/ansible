@@ -1,4 +1,4 @@
 ---
 # vars file for ansible-role-nginxvhost01: "thanhthaun.we1.local"
-vhost01: "thanhthaun.we1.local"
+vhost01: "thanhthuan.web1.local"
 vhost02: "thanhthuan.web2.local"
