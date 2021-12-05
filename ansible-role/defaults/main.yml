@@ -17,3 +17,9 @@ nginx_ssl_protocols: "TLSv1 TLSv1.1 TLSv1.2"
 nginx_status_enabled: false
 force_use_external_vhost: true
 vhost_directory: "./vhosts/"
+vhost_alt_names: ""
+vhost_fastcgi_params: {}
+vhost_fastcgi_pass: unix:/var/run/php-fpm.sock
+
+vhost_redirect_http: no
+vhost_process_http: yes
