@@ -4,17 +4,17 @@
 server {
     # Redirect all requests to HTTPS (HSTS *strongly* recommended)
     listen *:80;
-    server_name {{ vhost_name }} {{ vhost_alt_names }};
+    server_name {{ vhost }} {{ vhost_alt_names }};
     return 301 https://$host$request_uri;
 }
 {% elif vhost_process_http %}
 server {
     listen *:80;
-    server_name     {{ vhost_name }} {{ vhost_alt_names }};
+    server_name     {{ vhost }} {{ vhost_alt_names }};
     root            {{ vhost_root }};
     index           {{ vhost_index }};
-    access_log      /var/log/nginx/{{ vhost_name }}-access.log;
-    error_log       /var/log/nginx/{{ vhost_name }}-error.log;
+    access_log      /var/log/nginx/{{ vhost }}-access.log;
+    error_log       /var/log/nginx/{{ vhost }}-error.log;
 
     location / {
         try_files $uri $uri/ {{ vhost_index }};
@@ -37,11 +37,11 @@ server {
 {% if vhost_ssl %}
 server {
     listen *:443 ssl;
-    server_name     {{ vhost_name }} {{ vhost_alt_names }};
+    server_name     {{ vhost }} {{ vhost_alt_names }};
     root            {{ vhost_root }};
     index           {{ vhost_index }};
-    access_log      /var/log/nginx/{{ vhost_name }}-access.log;
-    error_log       /var/log/nginx/{{ vhost_name }}-error.log;
+    access_log      /var/log/nginx/{{ vhost }}-access.log;
+    error_log       /var/log/nginx/{{ vhost }}-error.log;
 
     # From Mozilla SSL config generator
     ssl_certificate {{ vhost_ssl.certificate }};
